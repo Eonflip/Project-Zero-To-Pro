@@ -31,5 +31,5 @@ The last 3 bytes identify a unique address on the network interface
 
 ### Layer 3: Network Layer
 
-
+In the data link layer
 
