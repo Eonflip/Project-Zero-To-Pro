@@ -35,7 +35,7 @@ These will handle allocating, freeing and reallocating memory.
 **Implicit Allocators** - handle memory automatically they detect when a program is no longer using a memory block and they free that memory block. These implicit allocators are also known as Garbage Collectors. Higher level languages usually have some form of garbage collector . Languages like Java, Python, JavaScript, Go, Ruby and C# all have garbage collectors.
 
 
-## Malloc Function
+## Malloc
 
 ```C
 #include <stdlib.h>
@@ -45,4 +45,28 @@ void *malloc(size_t size);
 In the C standard library there is a malloc function that allocates memory and returns a pointer to that block of memory if successful and `null` if unsuccessful
 
 Note: errno is also set if malloc returns null, read more on [errno](./errno.md)
+
+malloc doesn't initialize the memory it allocates. 
+
+## Calloc 
+
+Calloc can be called to both allocate memory and initialize that memory to 0, it's a wrapper for malloc.
+
+## Free
+
+A program can free allocated heap memory by calling the free function
+
+```C
+
+#include <stdlib.h>
+
+void free(void *ptr)
+
+```
+
+See if you can spot a potential issue with the free function...
+
+**Important** free is a void return therefore it will not give you an error. This can cause an issue because if you don't input the correct pointer to the free function you can get some crazy runtime errors.
+
+
 
