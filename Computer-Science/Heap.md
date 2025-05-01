@@ -34,3 +34,15 @@ These will handle allocating, freeing and reallocating memory.
 
 **Implicit Allocators** - handle memory automatically they detect when a program is no longer using a memory block and they free that memory block. These implicit allocators are also known as Garbage Collectors. Higher level languages usually have some form of garbage collector . Languages like Java, Python, JavaScript, Go, Ruby and C# all have garbage collectors.
 
+
+## Malloc Function
+
+```C
+#include <stdlib.h>
+void *malloc(size_t size);
+```
+
+In the C standard library there is a malloc function that allocates memory and returns a pointer to that block of memory if successful and `null` if unsuccessful
+
+Note: errno is also set if malloc returns null, read more on [errno](./errno.md)
+
